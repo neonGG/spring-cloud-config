@@ -1,0 +1,23 @@
+server:
+  port: ${port:9091}
+# DB 配置
+spring:
+  application:
+    name: user-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springcloud?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    password: wh060161
+    username: root
+# 扫描实体
+mybatis:
+  type-aliases-package: com.neon.domain
+  # mapper.xml配置文件路径
+  mapper-locations: classpath:mapper/*Mapper.xml
+# 配置eurekaserver
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+test:
+  name: leon
